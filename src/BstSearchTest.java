@@ -21,9 +21,18 @@ public class BstSearchTest {
   void testValuesExists() {
     BinaryTreeNode<Integer> root = binaryTree();
 
-    assertTrue(BstSearch.contains(root, 5));
-    assertTrue(BstSearch.contains(root, 3));
-    assertTrue(BstSearch.contains(root, 20));
+    assertTrue(BstSearch.contains(root, 10)); // root
+    assertTrue(BstSearch.contains(root, 3));  // left subtree
+    assertTrue(BstSearch.contains(root, 20)); // right subtree
 
+  }
+
+  @Test
+  void testNonExistentValue() {
+    BinaryTreeNode<Integer> root = binaryTree();
+
+    assertFalse(BstSearch.contains(root, 11));
+    assertFalse(BstSearch.contains(root, 2));
+    assertFalse(BstSearch.contains(root, 33));
   }
 }
