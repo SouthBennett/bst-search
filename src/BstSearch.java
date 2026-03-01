@@ -33,7 +33,7 @@ public class BstSearch {
         while (!queue.isEmpty()) {
             current = queue.poll();
 
-            if (current.data.equals(target)) {
+            if (target.equals(current.data)) {
                 return true;
             }
 
