@@ -31,23 +31,19 @@ public class BstSearch {
         queue.add(current);
 
         while (!queue.isEmpty()) {
-            int size = queue.size();
+            current = queue.poll();
 
-            for (int i = 0; i < size; i++) {
-                current = queue.poll();
+            if (current.data.equals(target)) {
+                return true;
+            }
 
-                if (current.data == target) {
-                    return true;
-                }
+            if (current.left != null) {
+                queue.add(current.left);
+            }
 
-                if (current.left != null) {
-                    queue.add(current.left);
-                }
-
-                if (current.right != null) {
-                    queue.add(current.right);
-                }
-            } 
+            if (current.right != null) {
+                queue.add(current.right);
+            }
         }
         return false;
     }
