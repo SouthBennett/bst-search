@@ -35,4 +35,17 @@ public class BstSearchTest {
     assertFalse(BstSearch.contains(root, 2));
     assertFalse(BstSearch.contains(root, 33));
   }
+
+  @Test
+  void testNullRoot() {
+    assertFalse(BstSearch.contains(null, 5));
+  }
+
+  @Test
+  void testSingleNodeTree() {
+    BinaryTreeNode<Integer> root = new BinaryTreeNode<Integer>(23);
+
+    assertTrue(BstSearch.contains(root, 23));
+    assertFalse(BstSearch.contains(root, 56));
+  }
 }
